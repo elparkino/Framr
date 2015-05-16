@@ -1,5 +1,5 @@
 === Framr ===
-Contributors: hlashbrooke
+Contributors: parallaxisjones
 Donate link: http://www.hughlashbrooke.com/donate
 Tags: wordpress, plugin, template
 Requires at least: 3.9
