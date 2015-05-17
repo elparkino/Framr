@@ -1,48 +1,48 @@
-=== Framr ===
+# Framr - A Wordpress Gallery Explorer
+---------------
 
-Contributors: parallaxisjones
-Donate link: http://www.thisisgnv.com/donate
-Tags: wordpress, plugin, template
-Requires at least: 3.9
-Tested up to: 4.0
-Stable tag: 1.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+####Contributors: parallaxisjones 
 
-catalouge explorer
+####Donate link: http://www.thisisgnv.com/donate 
 
-== Description ==
+##Tags: 
+wordpress, plugin, Framing, Gallery
+
+Requires at least: 3.9 Tested up to: 4.0 Stable tag: 1.0 License: GPLv2 or later License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+A custom wordpress catalouge explorer
+
+##Description
 
 This is a custom wordpress gallery explorer
 
-== Installation ==
+##Installation
 
 Installing "Framr" can be done either by searching for "Framr" via the "Plugins > Add New" screen in your WordPress dashboard, or by using the following steps:
 
-1. Download the plugin via WordPress.org
-1. Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard
-1. Activate the plugin through the 'Plugins' menu in WordPress
+Download the plugin via WordPress.org
+Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard
+Activate the plugin through the 'Plugins' menu in WordPress
 
-== Screenshots ==
+##Screenshots
+-----------------
 
-1. Description of first screenshot named screenshot-1
-2. Description of second screenshot named screenshot-2
-3. Description of third screenshot named screenshot-3
+##Frequently Asked Questions
 
-== Frequently Asked Questions ==
+What is the plugin template for?
+==================
 
-= What is the plugin template for? =
 
 This plugin template is designed to help you get started with any new WordPress plugin.
 
-== Changelog ==
+Changelog
+== 
 
-= 1.0 =
-* 2012-12-13
-* Initial release
+###1.0
+2015-05-
 
-== Upgrade Notice ==
 
-= 1.0 =
-* 2012-12-13
-* Initial release
+##1.1
+
+2012-12-13
+Initial release
