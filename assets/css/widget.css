@@ -8,3 +8,113 @@ and open the template in the editor.
     Author     : parallaxis
 */
 
+
+	.clearfix{
+		clear: both;
+	}
+	.outer-container{
+		width: 80%;
+		position: relative;
+		border: 1px solid #000;
+		min-width: 600px;
+		margin: 0 auto;
+	}
+
+	.section-container{
+		position: relative;
+		width: 80%;
+		margin: 0 auto;
+		border: 1px solid red;
+		/*height: 300px;*/
+	}
+
+	.vertical{
+		margin: 3% 3%;
+		float: left;
+		height: 50%;
+	}
+	.horizontal{
+		width: 75%;
+		position: relative;
+		margin: 5% auto;
+	}
+	.selected-container{
+		height: auto;
+		width: 80%;
+		float: left;
+
+	}
+	.selected-container img{
+		width: 100%;
+		height: auto;
+		margin: 2% 2%;
+	}
+
+	.frames-container{
+	  position: relative;
+	  margin: 0 auto;
+	  width: 80%;
+	}
+	.frames-container ul{
+  list-style: none;
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+  padding: 0 0 0 0;
+  display: block;
+  padding-left: 2%;
+	}
+
+	.frames-container li{
+		float: left;
+
+	}
+
+	.frame{
+		width: 200px;
+		height: 100px;
+	}
+
+	.inner-container{
+		margin: 0 2%;
+	}
+
+	.picker-container{
+		width: 60%;
+		min-width: 460px;
+		height: auto;
+		position: relative;
+		border: 1px solid black;
+		float: left;
+	}
+
+	.calc-container{
+		width: 30%;
+		height: auto;
+		position: relative;
+		border: 1px solid black;
+		float: right;		
+	}
+
+
+
+	@media screen and (max-width: 1186px){
+		.picker-container{
+			width: 90%;
+			min-width: 460px;
+			height: auto;
+			position: relative;
+			border: 1px solid black;
+			float: none;
+			margin: 0 auto;
+		}
+
+		.calc-container{
+			width: 90%;
+			height: auto;
+			position: relative;
+			border: 1px solid black;
+			float: none;
+			margin: 0 auto;		
+		}
+	}

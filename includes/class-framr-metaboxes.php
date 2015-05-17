@@ -26,7 +26,7 @@ class Frame_Post_Type_Metaboxes {
 	public function frame_meta_boxes() {
 		add_meta_box(
 			'frame_fields',
-			'frame Fields',
+			'Frame Fields',
 			array( $this, 'render_meta_boxes' ),
 			'frame',
 			'normal',
@@ -43,11 +43,8 @@ class Frame_Post_Type_Metaboxes {
 
 		$meta = get_post_custom( $post->ID );
 		$title = ! isset( $meta['frame_price'][0] ) ? '' : $meta['frame_price'][0];
-//		$twitter = ! isset( $meta['profile_twitter'][0] ) ? '' : $meta['profile_twitter'][0];
-//		$linkedin = ! isset( $meta['profile_linkedin'][0] ) ? '' : $meta['profile_linkedin'][0];
-//		$facebook = ! isset( $meta['profile_facebook'][0] ) ? '' : $meta['profile_facebook'][0];
 
-		wp_nonce_field( basename( __FILE__ ), 'profile_fields' ); ?>
+		wp_nonce_field( basename( __FILE__ ), 'frame_fields' ); ?>
 
 		<table class="form-table">
 
@@ -61,37 +58,6 @@ class Frame_Post_Type_Metaboxes {
 					<p class="description"><?php _e( 'E.g. $1.25 for the gilded frame', 'frame-post-type' ); ?></p>
 				</td>
 			</tr>
-<!--
-			<tr>
-				<td class="frame_meta_box_td" colspan="2">
-					<label for="profile_linkedin"><?php // _e( 'LinkedIn URL', 'frame-post-type' ); ?>
-					</label>
-				</td>
-				<td colspan="4">
-					<input type="text" name="profile_linkedin" class="regular-text" value="<?php // echo $linkedin; ?>">
-				</td>
-			</tr>
-
-			<tr>
-				<td class="frame_meta_box_td" colspan="2">
-					<label for="profile_twitter"><?php // _e( 'Twitter URL', 'frame-post-type' ); ?>
-					</label>
-				</td>
-				<td colspan="4">
-					<input type="text" name="profile_twitter" class="regular-text" value="<?php // echo $twitter; ?>">
-				</td>
-			</tr>
-
-			<tr>
-				<td class="frame_meta_box_td" colspan="2">
-					<label for="profile_facebook"><?php // _e( 'Facebook URL', 'frame-post-type' ); ?>
-					</label>
-				</td>
-				<td colspan="4">
-					<input type="text" name="profile_facebook" class="regular-text" value="<?php // echo $facebook; ?>">
-				</td>
-			</tr>-->
-
 		</table>
 
 	<?php }
@@ -127,12 +93,7 @@ class Frame_Post_Type_Metaboxes {
 
 		$meta['frame_price'] = ( isset( $_POST['frame_price'] ) ? esc_textarea( $_POST['frame_price'] ) : '' );
 
-//		$meta['profile_linkedin'] = ( isset( $_POST['profile_linkedin'] ) ? esc_url( $_POST['profile_linkedin'] ) : '' );
-
-//		$meta['profile_twitter'] = ( isset( $_POST['profile_twitter'] ) ? esc_url( $_POST['profile_twitter'] ) : '' );
-
-//		$meta['profile_facebook'] = ( isset( $_POST['profile_facebook'] ) ? esc_url( $_POST['profile_facebook'] ) : '' );
-
+                
 		foreach ( $meta as $key => $value ) {
 			update_post_meta( $post->ID, $key, $value );
 		}

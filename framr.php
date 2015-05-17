@@ -35,6 +35,29 @@ require_once( 'includes/class-framr-widget.php' );
  * @since  1.0.0
  * @return object Framr
  */
+
+
+function queryFrames() {
+    $new = new WP_Query('post_type=frame');
+    $response = array();
+//    $response["frames_raw"] = $new->posts;
+    $response["frames"] = array();
+    while ($new->have_posts()) : $new->the_post();
+//       var_dump();
+    
+       $response["frames"][get_the_ID()] = array();
+       $response["frames"][get_the_ID()]["title"] = get_the_title();
+       $response["frames"][get_the_ID()]["description"] = get_the_content();
+       $response["frames"][get_the_ID()]["frame_thumb"] = wp_get_attachment_image_src( get_post_thumbnail_id());
+       $response["frames"][get_the_ID()]["frame_meta"] = get_post_meta( get_the_ID());
+    endwhile;
+    echo json_encode($response);   
+    wp_die(); // this is required to terminate immediately and return a proper response
+}
+
+
+
+
 function Framr () {
 	$instance = Framr::instance( __FILE__, '1.0.0' );
 
@@ -54,3 +77,6 @@ $post_type_metaboxes = new Frame_Post_Type_Metaboxes;
 $post_type_metaboxes->init();
 add_action( 'widgets_init', create_function( '', 'register_widget("Framr_Widget");' ) );
 
+
+add_action( 'wp_ajax_nopriv_queryFrames', 'queryFrames' );  
+add_action( 'wp_ajax_queryFrames', 'queryFrames' ); 

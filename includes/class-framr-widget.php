@@ -1,27 +1,15 @@
 <?php
 /**
- * WordPress Widget Boilerplate
+ * Framr Widget
  *
  * The WordPress Widget Boilerplate is an organized, maintainable boilerplate for building widgets using WordPress best practices.
  *
- * @package   Widget_Name
- * @author    Your Name <email@example.com>
+ * @packdgage   Framr_widget
+ * @author    Parker Jones <parker.emailaddress@gmail.com>
  * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2014 Your Name or Company Name
+ * @link      http://thisisgnv.com
+ * @copyright 2014 swampthing Media
  *
- * @wordpress-plugin
- * Plugin Name:       @TODO
- * Plugin URI:        @TODO
- * Description:       @TODO
- * Version:           1.0.0
- * Author:            @TODO
- * Author URI:        @TODO
- * Text Domain:       widget-name
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path:       /lang
- * GitHub Plugin URI: https://github.com/<owner>/<repo>
  */
  
  // Prevent direct file access
@@ -226,7 +214,7 @@ class Framr_Widget extends WP_Widget {
 	 */
 	public function register_admin_styles() {
 
-		wp_enqueue_style( $this->get_widget_slug().'-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ) );
+		wp_enqueue_style( $this->get_widget_slug().'-admin-styles', plugins_url( 'Framr/assets/css/admin.css' ) );
 
 	} // end register_admin_styles
 
@@ -235,7 +223,7 @@ class Framr_Widget extends WP_Widget {
 	 */
 	public function register_admin_scripts() {
 
-		wp_enqueue_script( $this->get_widget_slug().'-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array('jquery') );
+		wp_enqueue_script( $this->get_widget_slug().'-admin-script', plugins_url( 'Framr/assets/js/admin.js'), array('jquery') );
 
 	} // end register_admin_scripts
 
@@ -243,20 +231,19 @@ class Framr_Widget extends WP_Widget {
 	 * Registers and enqueues widget-specific styles.
 	 */
 	public function register_widget_styles() {
-
-		wp_enqueue_style( $this->get_widget_slug().'-widget-styles', plugins_url( 'assets/css/widget.css', __FILE__ ) );
- 
+//                wp_enqueue_style( $this->get_widget_slug().'-widget-styles', "https://code.jquery.com/ui/1.11.4/themes/vader/jquery-ui.css");                
+		wp_enqueue_style( $this->get_widget_slug().'-widget-styles', plugins_url( 'Framr/assets/css/widget.css') );
+		
 	} // end register_widget_styles
 
 	/**
 	 * Registers and enqueues widget-specific scripts.
 	 */
 	public function register_widget_scripts() {
-
-		wp_enqueue_script( $this->get_widget_slug().'-script', plugins_url( 'assets/js/widget.js', __FILE__ ), array('jquery') );
+//            wp_enqueue_script( $this->get_widget_slug().'-script', "https://code.jquery.com/ui/1.11.4/jquery-ui.min.js", array('jquery') );	
+            wp_enqueue_script( $this->get_widget_slug().'-script', plugins_url( 'Framr/assets/js/widget.js' ), array('jquery') );
 
 	} // end register_widget_scripts
 
 } // end class
 
-// TODO: Remember to change 'Widget_Name' to match the class name definition
