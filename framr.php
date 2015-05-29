@@ -29,6 +29,7 @@ require_once( 'includes/lib/class-framr-post-type.php' );
 require_once( 'includes/lib/class-framr-taxonomy.php' );
 require_once( 'includes/class-framr-metaboxes.php' );
 require_once( 'includes/class-framr-widget.php' );
+require_once('includes/class-framr-templates.php' );
 /**
  * Returns the main instance of Framr to prevent the need to use globals.
  *
@@ -80,3 +81,6 @@ add_action( 'widgets_init', create_function( '', 'register_widget("Framr_Widget"
 
 add_action( 'wp_ajax_nopriv_queryFrames', 'queryFrames' );  
 add_action( 'wp_ajax_queryFrames', 'queryFrames' ); 
+
+
+add_action( 'plugins_loaded', array( 'PageTemplater', 'get_instance' ) );

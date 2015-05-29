@@ -16,13 +16,12 @@ and open the template in the editor.
 		width: 80%;
 		position: relative;
 		border: 1px solid #000;
-		min-width: 600px;
 		margin: 0 auto;
 	}
 
 	.section-container{
 		position: relative;
-		width: 80%;
+		width: 100%;
 		margin: 0 auto;
 		border: 1px solid red;
 		/*height: 300px;*/
@@ -80,8 +79,7 @@ and open the template in the editor.
 	}
 
 	.picker-container{
-		width: 60%;
-		min-width: 460px;
+		width: 100%;
 		height: auto;
 		position: relative;
 		border: 1px solid black;
@@ -89,7 +87,7 @@ and open the template in the editor.
 	}
 
 	.calc-container{
-		width: 30%;
+		width: 100%;
 		height: auto;
 		position: relative;
 		border: 1px solid black;
@@ -101,7 +99,6 @@ and open the template in the editor.
 	@media screen and (max-width: 1186px){
 		.picker-container{
 			width: 90%;
-			min-width: 460px;
 			height: auto;
 			position: relative;
 			border: 1px solid black;

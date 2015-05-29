@@ -7,12 +7,6 @@
  */
 ?>
 
-		<div class="outer-container">
-			<div class="frames-container">
-				<ul class="frame-list">
-					<div class="clearfix"></div>
-				</ul>
-			</div>
 			<div class="section-container">
 				<div class="picker-container inner-container ">
 					<div class="vertical"></div>
@@ -45,6 +39,5 @@
 
 				
 			</div>
-		</div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>

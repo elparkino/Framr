@@ -1,0 +1,6 @@
+/*Gallery styles*/
+.page-template-frame-gallery .gallery-box{
+	width: 100%;
+	border: 1px solid black;
+	height: auto;
+}
