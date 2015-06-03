@@ -7,7 +7,7 @@ and open the template in the editor.
     Created on : May 16, 2015, 7:31:28 PM
     Author     : parallaxis
 */
-
+	@import url("http://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css");
 
 	.clearfix{
 		clear: both;
@@ -27,20 +27,39 @@ and open the template in the editor.
 		/*height: 300px;*/
 	}
 
+	.inner-container.button-container{
+		text-align: center;
+		margin: 5% 0;
+		/*padding: 2% 2%;*/
+	}
+
+	.inner-container.button-container .send-quote{
+		margin-top: 5%;
+	}
+
+	.inner-container.button-container .requester-addy{
+		width: 90%;
+	}
+
 	.vertical{
 		margin: 3% 3%;
 		float: left;
-		height: 50%;
+		/*height: 150px;*/
 	}
 	.horizontal{
 		width: 75%;
+		/*height: 25px;*/
 		position: relative;
-		margin: 5% auto;
+		margin: 5% 25px;
 	}
 	.selected-container{
 		height: auto;
 		width: 80%;
 		float: left;
+		height: 100px;
+		margin-top: 5px;
+		border: 1px solid black;
+		background-image: url(http://img.izismile.com/img/img2/20090422/magic_07.jpg);
 
 	}
 	.selected-container img{

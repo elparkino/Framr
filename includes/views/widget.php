@@ -18,10 +18,6 @@
 					<div class="horizontal"></div>				
 				</div>
 				<div class="calc-container inner-container ">
-					<div class="price">
-						<h2>Price: </h2>
-					<span class="price-val">0</span>						
-					</div>
 					<div class-"footage">
 						<h2>Total Frame Footage: </h2>
 						<span class="total-footage">0' 0"</span>						
@@ -32,7 +28,10 @@
 					</div>
 
 				</div>
-
+				<div class="inner-container button-container">
+					<input type="email" name="emailaddress" class="requester-addy">
+					<button class="send-quote">Send</button>
+				</div>
 
 				<div class="clearfix">				
 			</div>

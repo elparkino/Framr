@@ -38,6 +38,23 @@ require_once('includes/class-framr-templates.php' );
  */
 
 
+
+function sendFrameInfo(){
+  $emailAddress = $_POST["emailAddress"];
+  $footage = $_POST["footage"];
+  $sender = $_POST["sender"];
+  var_dump($_POST);
+  $messageString = sprintf("%s has requested a frame with dimensions %s", $footage, $sender);
+  $subject = "New Frame Quote Request";
+
+  $message = "New Frame quote from that sweet frame thing";
+  $message .= "\r\n";
+  $message .= $messageString;
+
+  echo wp_mail($emailAddress, $subject, $message, null, null );
+  wp_die();
+}
+
 function queryFrames() {
     $new = new WP_Query('post_type=frame');
     $response = array();
@@ -77,10 +94,13 @@ Framr()->register_post_type( 'frame', __( 'Frames', 'framr' ), __( 'Frame', 'fra
 $post_type_metaboxes = new Frame_Post_Type_Metaboxes;
 $post_type_metaboxes->init();
 add_action( 'widgets_init', create_function( '', 'register_widget("Framr_Widget");' ) );
-
+add_action( 'plugins_loaded', array( 'PageTemplater', 'get_instance' ) );
 
 add_action( 'wp_ajax_nopriv_queryFrames', 'queryFrames' );  
 add_action( 'wp_ajax_queryFrames', 'queryFrames' ); 
 
+add_action( 'wp_ajax_nopriv_sendFrameInfo', 'sendFrameInfo' );  
+add_action( 'wp_ajax_sendFrameInfo', 'sendFrameInfo' ); 
 
-add_action( 'plugins_loaded', array( 'PageTemplater', 'get_instance' ) );
+
+
