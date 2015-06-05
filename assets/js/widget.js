@@ -3,6 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+ 
 var pjWidgetHolder = $;
 var $ = jQuery;
 
@@ -59,7 +62,7 @@ var frames = [
   	$(defaultImg).addClass("selected");
   	//$('.selected-container').append(defaultImg);
     setSliderInit();
-    
+
   	$('.frame').on("click", handleFrameClick);
 
     // $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
@@ -185,3 +188,5 @@ var frames = [
       slide: verticalSlideHandler
     });
   }
+
+

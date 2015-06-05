@@ -29,7 +29,7 @@
 
 				</div>
 				<div class="inner-container button-container">
-					<input type="email" name="emailaddress" class="requester-addy">
+					<input type="email" name="emailaddress" placeholder="enter your email to recieve a quote" class="requester-addy"/>
 					<button class="send-quote">Send</button>
 				</div>
 
