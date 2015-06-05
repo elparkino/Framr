@@ -109,6 +109,9 @@ class Framr_Admin_API {
 			case 'checkbox_multi':
 				foreach ( $field['options'] as $k => $v ) {
 					$checked = false;
+					if($data == ""){
+						break;
+					}
 					if ( in_array( $k, $data ) ) {
 						$checked = true;
 					}
