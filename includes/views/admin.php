@@ -19,7 +19,8 @@
 		    	<option>Standard</option>
 		    	<option>Metric</option>
 		    </select>
-	    </li>    
+	    </li>
+   
 	</ul>
 </div>
 <div class="framr-widget-description">

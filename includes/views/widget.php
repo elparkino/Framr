@@ -30,6 +30,7 @@
 				</div>
 				<div class="inner-container button-container">
 					<input type="email" name="emailaddress" placeholder="enter your email to recieve a quote" class="requester-addy"/>
+				    <input type="checkbox" name="newsletter" checked="true">Sign Up for the Newsletter</input>
 					<button class="send-quote">Send</button>
 				</div>
 
