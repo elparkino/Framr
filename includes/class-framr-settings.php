@@ -67,7 +67,7 @@ class Framr_Settings {
 	 * @return void
 	 */
 	public function add_menu_item () {
-		$page = add_options_page( __( 'Framr Placeholder Settings', 'framr' ) , __( 'Framr Placeholder Settings', 'framr' ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
+		$page = add_options_page( __( 'Framr Settings', 'framr' ) , __( 'Framr Settings', 'framr' ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
 		add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
 	}
 
@@ -107,78 +107,78 @@ class Framr_Settings {
 	 */
 	private function settings_fields () {
 
-		$settings['standard'] = array(
-			'title'					=> __( 'Standard', 'framr' ),
+		$settings['Widget'] = array(
+			'title'					=> __( 'Widget Options', 'framr' ),
 			'description'			=> __( 'These are fairly standard form input fields.', 'framr' ),
 			'fields'				=> array(
 				array(
-					'id' 			=> 'text_field',
-					'label'			=> __( 'Some Text' , 'framr' ),
-					'description'	=> __( 'This is a standard text field.', 'framr' ),
-					'type'			=> 'text',
+					'id' 			=> 'widget_email_field',
+					'label'			=> __( 'Recipient Email' , 'framr' ),
+					'description'	=> __( 'The Email address that we\'ll send your quotes.', 'framr' ),
+					'type'			=> 'email',
 					'default'		=> '',
-					'placeholder'	=> __( 'Placeholder text', 'framr' )
+					'placeholder'	=> __( 'Email Address', 'framr' )
 				),
-				array(
-					'id' 			=> 'password_field',
-					'label'			=> __( 'A Password' , 'framr' ),
-					'description'	=> __( 'This is a standard password field.', 'framr' ),
-					'type'			=> 'password',
-					'default'		=> '',
-					'placeholder'	=> __( 'Placeholder text', 'framr' )
-				),
-				array(
-					'id' 			=> 'secret_text_field',
-					'label'			=> __( 'Some Secret Text' , 'framr' ),
-					'description'	=> __( 'This is a secret text field - any data saved here will not be displayed after the page has reloaded, but it will be saved.', 'framr' ),
-					'type'			=> 'text_secret',
-					'default'		=> '',
-					'placeholder'	=> __( 'Placeholder text', 'framr' )
-				),
+				// array(
+				// 	'id' 			=> 'password_field',
+				// 	'label'			=> __( 'A Password' , 'framr' ),
+				// 	'description'	=> __( 'This is a standard password field.', 'framr' ),
+				// 	'type'			=> 'password',
+				// 	'default'		=> '',
+				// 	'placeholder'	=> __( 'Placeholder text', 'framr' )
+				// ),
+				// array(
+				// 	'id' 			=> 'secret_text_field',
+				// 	'label'			=> __( 'Some Secret Text' , 'framr' ),
+				// 	'description'	=> __( 'This is a secret text field - any data saved here will not be displayed after the page has reloaded, but it will be saved.', 'framr' ),
+				// 	'type'			=> 'text_secret',
+				// 	'default'		=> '',
+				// 	'placeholder'	=> __( 'Placeholder text', 'framr' )
+				// ),
 				array(
 					'id' 			=> 'text_block',
-					'label'			=> __( 'A Text Block' , 'framr' ),
-					'description'	=> __( 'This is a standard text area.', 'framr' ),
+					'label'			=> __( 'Quote Email Message' , 'framr' ),
+					'description'	=> __( 'Enter The message you would like quote converters to recieve', 'framr' ),
 					'type'			=> 'textarea',
 					'default'		=> '',
-					'placeholder'	=> __( 'Placeholder text for this textarea', 'framr' )
+					'placeholder'	=> __( 'Hey Goofball thanks for the quote', 'framr' )
 				),
-				array(
-					'id' 			=> 'single_checkbox',
-					'label'			=> __( 'An Option', 'framr' ),
-					'description'	=> __( 'A standard checkbox - if you save this option as checked then it will store the option as \'on\', otherwise it will be an empty string.', 'framr' ),
-					'type'			=> 'checkbox',
-					'default'		=> ''
-				),
-				array(
-					'id' 			=> 'select_box',
-					'label'			=> __( 'A Select Box', 'framr' ),
-					'description'	=> __( 'A standard select box.', 'framr' ),
-					'type'			=> 'select',
-					'options'		=> array( 'drupal' => 'Drupal', 'joomla' => 'Joomla', 'wordpress' => 'WordPress' ),
-					'default'		=> 'wordpress'
-				),
-				array(
-					'id' 			=> 'radio_buttons',
-					'label'			=> __( 'Some Options', 'framr' ),
-					'description'	=> __( 'A standard set of radio buttons.', 'framr' ),
-					'type'			=> 'radio',
-					'options'		=> array( 'superman' => 'Superman', 'batman' => 'Batman', 'ironman' => 'Iron Man' ),
-					'default'		=> 'batman'
-				),
-				array(
-					'id' 			=> 'multiple_checkboxes',
-					'label'			=> __( 'Some Items', 'framr' ),
-					'description'	=> __( 'You can select multiple items and they will be stored as an array.', 'framr' ),
-					'type'			=> 'checkbox_multi',
-					'options'		=> array( 'square' => 'Square', 'circle' => 'Circle', 'rectangle' => 'Rectangle', 'triangle' => 'Triangle' ),
-					'default'		=> array( 'circle', 'triangle' )
-				)
+				// array(
+				// 	'id' 			=> 'single_checkbox',
+				// 	'label'			=> __( 'An Option', 'framr' ),
+				// 	'description'	=> __( 'A standard checkbox - if you save this option as checked then it will store the option as \'on\', otherwise it will be an empty string.', 'framr' ),
+				// 	'type'			=> 'checkbox',
+				// 	'default'		=> ''
+				// ),
+				// array(
+				// 	'id' 			=> 'select_box',
+				// 	'label'			=> __( 'A Select Box', 'framr' ),
+				// 	'description'	=> __( 'A standard select box.', 'framr' ),
+				// 	'type'			=> 'select',
+				// 	'options'		=> array( 'drupal' => 'Drupal', 'joomla' => 'Joomla', 'wordpress' => 'WordPress' ),
+				// 	'default'		=> 'wordpress'
+				// ),
+				// array(
+				// 	'id' 			=> 'radio_buttons',
+				// 	'label'			=> __( 'Some Options', 'framr' ),
+				// 	'description'	=> __( 'A standard set of radio buttons.', 'framr' ),
+				// 	'type'			=> 'radio',
+				// 	'options'		=> array( 'superman' => 'Superman', 'batman' => 'Batman', 'ironman' => 'Iron Man' ),
+				// 	'default'		=> 'batman'
+				// ),
+				// array(
+				// 	'id' 			=> 'multiple_checkboxes',
+				// 	'label'			=> __( 'Some Items', 'framr' ),
+				// 	'description'	=> __( 'You can select multiple items and they will be stored as an array.', 'framr' ),
+				// 	'type'			=> 'checkbox_multi',
+				// 	'options'		=> array( 'square' => 'Square', 'circle' => 'Circle', 'rectangle' => 'Rectangle', 'triangle' => 'Triangle' ),
+				// 	'default'		=> array( 'circle', 'triangle' )
+				// )
 			)
 		);
 
-		$settings['extra'] = array(
-			'title'					=> __( 'Extra', 'framr' ),
+		$settings['Gallery'] = array(
+			'title'					=> __( 'Gallery Options', 'framr' ),
 			'description'			=> __( 'These are some extra input fields that maybe aren\'t as common as the others.', 'framr' ),
 			'fields'				=> array(
 				array(
