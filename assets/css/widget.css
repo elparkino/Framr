@@ -13,7 +13,7 @@ and open the template in the editor.
 		clear: both;
 	}
 	.outer-container{
-		width: 80%;
+		/*width: 80%;*/
 		position: relative;
 		border: 1px solid #000;
 		margin: 0 auto;
@@ -47,7 +47,7 @@ and open the template in the editor.
 		/*height: 150px;*/
 	}
 	.horizontal{
-		width: 75%;
+		width: 80%;
 		/*height: 25px;*/
 		position: relative;
 		margin: 5% 25px;
@@ -71,13 +71,13 @@ and open the template in the editor.
 	.frames-container{
 	  position: relative;
 	  margin: 0 auto;
-	  width: 80%;
+	  /*width: 80%;*/
 	}
 	.frames-container ul{
   list-style: none;
   position: relative;
   margin: 0 auto;
-  width: 90%;
+  /*width: 90%;*/
   padding: 0 0 0 0;
   display: block;
   padding-left: 2%;
@@ -94,7 +94,7 @@ and open the template in the editor.
 	}
 
 	.inner-container{
-		margin: 0 2%;
+		/*margin: 0 2%;*/
 	}
 
 	.picker-container{
@@ -102,15 +102,16 @@ and open the template in the editor.
 		height: auto;
 		position: relative;
 		border: 1px solid black;
-		float: left;
+		/*float: left;*/
 	}
 
 	.calc-container{
-		width: 100%;
+		width: 90%;
+		padding: 5% 5%;
 		height: auto;
 		position: relative;
 		border: 1px solid black;
-		float: right;		
+		/*float: right;		*/
 	}
 
 
