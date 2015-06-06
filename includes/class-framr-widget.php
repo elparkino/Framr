@@ -153,8 +153,17 @@ class Framr_Widget extends WP_Widget {
 		$instance = $old_instance;
 
 		// TODO: Here is where you update your widget's old values with the new, incoming values
-
-		return $instance;
+		foreach ($_POST as $key => $value) {
+			// echo substr($key, 0,4);
+			if("framr" == substr($key, 0,5)){
+				$new_instance[$key] = $value;
+				update_option($key, $new_instance[$key]);
+			}
+			else{
+				// echo $key;
+			}
+		}
+		return $new_instance;
 
 	} // end widget
 
@@ -166,9 +175,11 @@ class Framr_Widget extends WP_Widget {
 	public function form( $instance ) {
 
 		// TODO: Define default values for your variables
+
 		$instance = wp_parse_args(
 			(array) $instance
 		);
+
 
 		// TODO: Store the values of the widget in their own variable
 

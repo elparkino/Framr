@@ -18,7 +18,14 @@
 					<div class="horizontal"></div>				
 				</div>
 				<div class="calc-container inner-container ">
-					<div class-"footage">
+					<?php
+					if(array_key_exists("framr-widget-display-footage-checkbox", $instance)){
+						$hiddenStyle = "";
+					}else{
+						$hiddenStyle = "display:none;";
+					}				
+					?>
+					<div class="footage" <?php echo 'style="' . $hiddenStyle . '"'?>>
 						<h2>Total Frame Footage: </h2>
 						<span class="total-footage">0' 0"</span>						
 					</div>
@@ -30,7 +37,13 @@
 				</div>
 				<div class="inner-container button-container">
 					<input type="email" name="emailaddress" placeholder="enter your email to recieve a quote" class="requester-addy"/>
-				    <input type="checkbox" name="newsletter" checked="true">Sign Up for the Newsletter</input>
+					<?php
+					if(array_key_exists("framr-widget-display-newsletter-checkbox", $instance)){
+						echo '<input type="checkbox" name="newsletter" checked="true">Sign Up for the Newsletter</input>';
+					}				
+					?>
+				    
+					
 					<button class="send-quote">Send</button>
 				</div>
 

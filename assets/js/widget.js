@@ -5,7 +5,7 @@
  */
 
 
- 
+
 var pjWidgetHolder = $;
 var $ = jQuery;
 
@@ -38,6 +38,8 @@ var frames = [
 ];
   
   $(document).ready(function() {
+
+    // console.log(FramerPlugin);
     
     DoFramrFunction("queryFrames", function(data){
       console.log(data);

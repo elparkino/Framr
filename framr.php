@@ -40,16 +40,21 @@ require_once('includes/class-framr-templates.php' );
 
 
 function sendFrameInfo(){
-  $emailAddress = $_POST["emailAddress"];
+  $emailAddress = get_option('wpt_widget_email_field');
+  $thankyou = get_option('wpt_text_block');
   $footage = $_POST["footage"];
   $sender = $_POST["sender"];
-  var_dump($_POST);
-  $messageString = sprintf("%s has requested a frame with dimensions %s", $footage, $sender);
-  $subject = "New Frame Quote Request";
 
-  $message = "New Frame quote from that sweet frame thing";
+  $messageString = sprintf("%s has requested a frame with dimensions %s", $footage, $sender);
+  
+  $subject = "New Frame quote - ". date("Y-m-d H:i:s") ." - frame thing";
+  $thankYouSubject = "Thank You For Requesting a Quote From Hector";
+
+  $message = "New Frame quote - ". date("Y-m-d H:i:s") ." - frame thing";
   $message .= "\r\n";
   $message .= $messageString;
+
+  wp_mail($sender, $thankYouSubject, $thankyou, null, null);
 
   echo wp_mail($emailAddress, $subject, $message, null, null );
   wp_die();
@@ -86,6 +91,30 @@ function Framr () {
 	return $instance;
 }
 
+
+function GetPluginOptionsFields(){
+
+  return $optionArray = array(
+    'featuredImage' => get_option('wpt_an_image'),
+    'checkBox' => get_option('wpt_multiple_checkboxes')
+    );
+
+ }
+
+function setScriptData(){
+
+add_action( 'wp_ajax_nopriv_queryFrames', 'queryFrames' );  
+add_action( 'wp_ajax_queryFrames', 'queryFrames' ); 
+
+add_action( 'wp_ajax_nopriv_sendFrameInfo', 'sendFrameInfo' );  
+add_action( 'wp_ajax_sendFrameInfo', 'sendFrameInfo' ); 
+
+
+wp_register_script('framr-widget-script', plugins_url( 'Framr/assets/js/widget.js' ));
+wp_localize_script( 'framr-widget-script', 'FramerPlugin', GetPluginOptionsFields() );
+
+}
+
 Framr();
 
 $framr = Framr();
@@ -96,11 +125,7 @@ $post_type_metaboxes->init();
 add_action( 'widgets_init', create_function( '', 'register_widget("Framr_Widget");' ) );
 add_action( 'plugins_loaded', array( 'PageTemplater', 'get_instance' ) );
 
-add_action( 'wp_ajax_nopriv_queryFrames', 'queryFrames' );  
-add_action( 'wp_ajax_queryFrames', 'queryFrames' ); 
-
-add_action( 'wp_ajax_nopriv_sendFrameInfo', 'sendFrameInfo' );  
-add_action( 'wp_ajax_sendFrameInfo', 'sendFrameInfo' ); 
+setScriptData();
 
 
 
